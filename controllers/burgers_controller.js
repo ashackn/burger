@@ -9,8 +9,8 @@ router.get("/", function (req, res) {
     })
 })
 //Update
-router.put('/burgers/updateOne', function(req,res){
-    burger.updateOne(req.body.burger_id, function(result){
+router.post('/burgers_update/:burger_id', function(req,res){
+    burger.updateOne(req.params.burger_id, function(result){
         console.log(result);
         res.redirect('/');
     });
