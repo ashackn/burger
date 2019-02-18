@@ -8,14 +8,14 @@ router.get("/", function (req, res) {
     res.render('index',{burger_data});
     })
 })
-//Update
+
 router.post('/burgers_update/:burger_id', function(req,res){
     burger.updateOne(req.params.burger_id, function(result){
         console.log(result);
         res.redirect('/');
     });
 });
-//Post CREATE
+
 router.post('/burgers/insertOne', function(req,res){
     burger.insertOne(req.body.burger_name, function(result){
         res.redirect('/');
